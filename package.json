@@ -4,7 +4,7 @@
     "description": "Simple chat application with socket.io",
     "main": "app.js",
     "scripts": {
-        "start": "nodemon app.js"
+        "start": "node app.js"
     },
     "keywords": [],
     "author": "Younes Ghorbany",
