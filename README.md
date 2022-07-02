@@ -1,4 +1,4 @@
-# onlineFightingGame
+# basicMessager
 This is the basic messager with socket.io
 
 # Usage
