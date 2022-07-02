@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="css/bootstrap-rtl.min.css" />
+        <link rel="stylesheet" href="./css/styles.css" />
+        <title>ورود به چت</title>
+    </head>
+    <body class="rtl text-center">
+        <form id="nicknameForm" class="form-signin">
+            <h1 class="h3 mb-3 font-weight-normal">
+                لطفاً نام کاربری خود را وارد کنید
+            </h1>
+            <label for="nicknameInput" class="sr-only">نام کاربری</label>
+            <input
+            type="text"
+            name="nickname"
+            id="nicknameInput"
+            class="form-control"
+            placeholder="نام کاربری"
+            required
+            autofocus
+            />
+            <span class="d-block my-3">انتخاب اتاق مورد نظر :</span>
+            <select name="wichRoom" id="rooms" class=" form-control">
+                <option value="room 1">room 1</option>
+                <option value="room 2">room 2</option>
+                <option value="v">room 3</option>
+            </select>
+            <button class="mt-3 btn-lg btn-primary btn-block" type="submit">
+                ورود به چت
+            </button>
+        </form>
+            <a id="continue" class="text-primary">ادامه با حالت مهمان</a>
+        <script>
+            const nicknameForm = document.getElementById("nicknameForm"),
+                nicknameInput = document.getElementById("nicknameInput"),
+                guestMode = document.getElementById('continue'),
+                room = document.getElementById('rooms')
+
+                guestMode.addEventListener("click",(e)=> {
+                    localStorage.setItem('nickname','geust')
+                    localStorage.setItem('room',room).value
+                    window.location.replace('/chat.html')
+                })
+
+            nicknameForm.addEventListener("submit", (e) => {
+                e.preventDefault()
+                localStorage.setItem("nickname", nicknameInput.value)
+                localStorage.setItem("room", room.value)
+                window.location.replace('/chat.html')
+            });
+        </script>
+    </body>
+</html>
